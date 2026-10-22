@@ -1,0 +1,44 @@
+plugins {
+    id 'java'
+    id 'war'
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+description = 'homework'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(7)
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+ext {
+    springVersion = '4.3.30.RELEASE'
+    jacksonVersion = '2.8.11.1'
+}
+
+dependencies {
+
+    implementation "org.springframework:spring-webmvc:${springVersion}"
+    implementation "org.springframework:spring-jdbc:${springVersion}"
+    implementation "org.springframework:spring-context:${springVersion}"
+
+    implementation "com.fasterxml.jackson.core:jackson-databind:${jacksonVersion}"
+
+    providedCompile 'javax.servlet:javax.servlet-api:3.1.0'
+
+    runtimeOnly 'com.h2database:h2:1.4.196'
+
+    testImplementation "org.springframework:spring-test:${springVersion}"
+    testImplementation 'junit:junit:4.13.2'
+    testImplementation 'org.assertj:assertj-core:2.9.1'
+}
+
+tasks.named('test') {
+    useJUnit()
+}
