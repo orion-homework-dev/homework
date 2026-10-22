@@ -57,11 +57,18 @@ We care about:
 - practical modernization
 - scalability
 
+## Development process
+
+Please keep a record of the changes you make and why you make them. Preferably, use small, meaningful Git commits with messages that explain both the change and its rationale. Brief notes in the README can supplement the commit history, especially for trade-offs or alternatives you considered.
+
 ## Constraints
 
-Keep the solution proportional to the problem.
+The solution must use Java and Spring Boot. You may upgrade the Java version and dependencies.
 
-The goal is to transform a small but messy system into something clean, understandable, and fit for future change.
+Everything else may be redesigned or rewritten, including the API, database schema, persistence approach, and project structure, provided the behavior described above is preserved.
+
+Keep the solution proportional to the problem. The goal is to transform a small but messy system into something clean, understandable, and fit for future change.
+
 
 ## Bonus points
 
